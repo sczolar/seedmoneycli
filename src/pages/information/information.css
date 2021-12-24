@@ -1,0 +1,28 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100vh;
+  text-transform: capitalize;
+  margin: 50px auto;
+}
+.info form {
+  background-color: rgb(221, 221, 221);
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+.info form .d-flex {
+  padding: 10px;
+}
+.info form .d-flex button:nth-child(1){
+    margin-right: 10px;
+}
+.info form button {
+  width: 100%;
+  width: 100%;
+}
+.info form .d-flex .link{
+    text-decoration: none;
+    color: white;
+    width: 100%;
+}

@@ -1,8 +1,9 @@
 :root {
   --primary-b: #5c5c5c;
   --secondary-b: #2175e5;
-  --thrid-b: #1b47798e;
-  --font-c: #c0c0c0;
+  --thrid-b: #6063b95c;
+  --font-c: #d3d3d3;
+  --wel-com: rgb(0, 17, 63);
 }
 
 body {
