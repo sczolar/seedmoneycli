@@ -1,0 +1,19 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  text-transform: capitalize;
+}
+.MuiInputLabel-root
+  .MuiInputLabel-formControl
+  .MuiInputLabel-animated
+  .MuiInputLabel-standard
+  .MuiFormLabel-root
+  .MuiFormLabel-colorPrimary
+  .css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root {
+  border-color: whitesmoke;
+  color: white;
+}

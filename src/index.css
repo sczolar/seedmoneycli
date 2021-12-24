@@ -1,0 +1,32 @@
+:root {
+  --primary-b: #171941;
+  --secondary-b: #2175e5;
+  --thrid-b: #192053;
+  --font-c: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-b);
+  color: var(--font-c);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.dotsimg {
+  background-image: url(/src/images/dots.png);
+  width: 100%;
+  background-repeat: repeat-y;
+  height: 100vh;
+  background-size: contain;
+  position: absolute;
+  z-index: -1;
+}
