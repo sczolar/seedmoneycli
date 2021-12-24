@@ -1,4 +1,4 @@
-.homecontainer {
+.home {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,21 +7,12 @@
   height: 100vh;
   text-transform: capitalize;
 }
-.homecontainer .hometitle {
-  font-size: 60px;
-}
-.homecontainer .homebody {
-  font-size: 30px;
-}
-.homecontainer .homefooter {
-  margin-top: 40px;
-}
-.homecontainer .homefooter .link {
+.home .link {
   text-decoration: none;
-  color: var(--secondary-b);
+  color: var(--font-c);
   background-color: var(--thrid-b);
   padding: 10px 15px;
-  margin: 20px;
+  margin: 10px;
   border-radius: 6px;
   cursor: pointer;
 }

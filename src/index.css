@@ -1,8 +1,8 @@
 :root {
-  --primary-b: #171941;
+  --primary-b: #5c5c5c;
   --secondary-b: #2175e5;
-  --thrid-b: #192053;
-  --font-c: #ffffff;
+  --thrid-b: #1b47798e;
+  --font-c: #c0c0c0;
 }
 
 body {
@@ -13,20 +13,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--primary-b);
-  color: var(--font-c);
+  background-image: url(/src/images/bg.jpg);
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-.dotsimg {
-  background-image: url(/src/images/dots.png);
-  width: 100%;
-  background-repeat: repeat-y;
-  height: 100vh;
-  background-size: contain;
-  position: absolute;
-  z-index: -1;
 }

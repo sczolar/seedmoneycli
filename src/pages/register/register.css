@@ -1,4 +1,4 @@
-.login {
+.register {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,11 +7,11 @@
   height: 100vh;
   text-transform: capitalize;
 }
-.login form {
+.register form {
   background-color: rgb(221, 221, 221);
   padding: 20px 30px;
   border-radius: 10px;
 }
-.login form button{
+.register form button{
     width: 100%;
 }
