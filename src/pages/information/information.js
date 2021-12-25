@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 //information
 const Information = (props) => {
+  const [active, setactive] = React.useState(false);
   const [data, setdata] = React.useState({
     farmerid: "",
     farmer_name: "",
@@ -131,10 +132,18 @@ const Information = (props) => {
           </div>
           <div className="d-flex">
             <button type="submit" className="btn btn-primary mr-3">
-              Process
+              Verify
             </button>
-            <Link to="/milkprocess" className="link">
-              <button className="btn btn-primary ml-3">Add Block</button>
+            <Link to={active ? "/milkprocess" : ""} className="link">
+              <button
+                className={
+                  active
+                    ? "btn btn-primary ml-3"
+                    : "btn btn-primary ml-3 disable"
+                }
+              >
+                Add Block
+              </button>
             </Link>
           </div>
         </form>
