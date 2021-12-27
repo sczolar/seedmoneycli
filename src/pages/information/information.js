@@ -1,9 +1,12 @@
 import "./information.css";
 import React from "react";
 import { Link } from "react-router-dom";
+import { CreateInfo } from "../../redux/action";
+import { useDispatch } from "react-redux";
 
 //information
 const Information = (props) => {
+  const dispatch = useDispatch();
   const [active, setactive] = React.useState(false);
   const [data, setdata] = React.useState({
     farmerid: "",
@@ -19,14 +22,32 @@ const Information = (props) => {
     setdata({ ...data, [e.target.name]: e.target.value });
   };
   console.log(data);
+
   const submit = (e) => {
     e.preventDefault();
-    // if (data.username && data.password) {
-    //   dispatch(LoginUser({ username: data.username, password: data.password }));
-    //   setdata({ username: "", password: "" });
-    // } else {
-    //   console.log("plese enter the value");
-    // }
+    if (
+      data.farmerid &&
+      data.farmer_name &&
+      data.cane &&
+      data.quality_li &&
+      data.quality &&
+      data.date &&
+      data.place
+    ) {
+      dispatch(CreateInfo(data));
+      setactive(true);
+      // setdata({
+      //   farmerid: "",
+      //   farmer_name: "",
+      //   cane: "",
+      //   quality_li: "",
+      //   quality: "",
+      //   date: "",
+      //   place: "",
+      // });
+    } else {
+      console.log("plese enter the value for all the field");
+    }
   };
   return (
     <React.Fragment>

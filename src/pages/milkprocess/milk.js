@@ -1,7 +1,13 @@
 import "./milk.css";
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { CreateMilk } from "../../redux/action";
+import { useDispatch, useSelector } from "react-redux";
 
 const Milk = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { INFO, MILK } = useSelector((state) => state.data);
   const [data, setdata] = React.useState({
     dairyform: "",
     snf: "",
@@ -9,18 +15,39 @@ const Milk = () => {
     packed_date: "",
   });
 
+  useEffect(() => {
+    if (MILK.tid) {
+      navigate("/barcode");
+    }
+  }, [MILK, navigate]);
+
   const handler = (e) => {
     setdata({ ...data, [e.target.name]: e.target.value });
   };
   console.log(data);
   const submit = (e) => {
     e.preventDefault();
-    // if (data.username && data.password) {
-    //   dispatch(LoginUser({ username: data.username, password: data.password }));
-    //   setdata({ username: "", password: "" });
-    // } else {
-    //   console.log("plese enter the value");
-    // }
+    if (data.dairyform && data.snf && data.fat && data.packed_date) {
+      dispatch(
+        CreateMilk({
+          farmerid: INFO.farmerid,
+          farmer_name: INFO.farmer_name,
+          cane: INFO.cane,
+          quality_li: INFO.quality_li,
+          quality: INFO.quality,
+          date: INFO.date,
+          place: INFO.place,
+          dairyform: data.dairyform,
+          snf: data.snf,
+          fat: data.fat,
+          packed_date: data.packed_date,
+          tid: sessionStorage.getItem("tid"),
+        })
+      );
+      setdata({ dairyform: "", snf: "", fat: "", packed_date: "" });
+    } else {
+      console.log("plese enter the value");
+    }
   };
   return (
     <React.Fragment>
@@ -86,7 +113,6 @@ const Milk = () => {
             <button type="submit" className="btn btn-primary mr-3">
               verify
             </button>
-            <button className="btn btn-primary ml-3">Add Block</button>
           </div>
         </form>
       </div>

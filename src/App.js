@@ -6,17 +6,24 @@ import Register from "./pages/register/register";
 import Home from "./pages/home/home";
 import Info from "./pages/information/information";
 import Milk from "./pages/milkprocess/milk";
+import { useSelector } from "react-redux";
+import { Nav } from "./pages/home/home";
+import QRCode from "./pages/QRgenerater/qrgen";
+import Tracker from "./pages/tracker/tracker";
 
 function App() {
+  const { LOGIN } = useSelector((state) => state.data);
   return (
     <React.Fragment>
-      <div className="dotsimg"></div>
+      <Nav LOGIN={LOGIN} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/information" element={<Info />} />
         <Route path="/milkprocess" element={<Milk />} />
+        <Route path="/barcode" element={<QRCode />} />
+        <Route path="/tracker" element={<Tracker />} />
       </Routes>
     </React.Fragment>
   );

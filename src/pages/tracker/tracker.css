@@ -1,0 +1,25 @@
+.tracker {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  margin-top: 60px;
+}
+.tracker .cartitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tracker .tr {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.tracker .tr .td:nth-child(2) {
+  font-weight: 600;
+}
+.tracker p {
+  margin-top: 10px;
+}

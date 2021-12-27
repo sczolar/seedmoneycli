@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { LoginUser } from "../../redux/action";
 
 const Login = () => {
-  document.title = "seedmoney-login"
+  document.title = "seedmoney-login";
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { loading, LOGIN } = useSelector((state) => state.data);
@@ -16,11 +16,12 @@ const Login = () => {
 
   React.useEffect(() => {
     if (LOGIN.username) {
+      sessionStorage.setItem("userid", LOGIN._id);
       console.log("login user is in console");
       navigate("/");
     }
   }, [LOGIN, navigate]);
-  
+
   const handler = (e) => {
     setdata({ ...data, [e.target.name]: e.target.value });
   };

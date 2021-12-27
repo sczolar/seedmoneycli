@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CreateUser } from "../../redux/action";
 
 const Register = () => {
-  document.title = "seedmoney-register"
+  document.title = "seedmoney-register";
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { loading, MESSAGE } = useSelector((state) => state.data);
@@ -13,6 +13,7 @@ const Register = () => {
     username: "",
     password: "",
     email: "",
+    roll: "0",
   });
 
   React.useEffect(() => {
@@ -34,6 +35,7 @@ const Register = () => {
           username: data.username,
           password: data.password,
           email: data.email,
+          roll: data.roll,
         })
       );
       setdata({ username: "", password: "", email: "" });
@@ -86,16 +88,23 @@ const Register = () => {
             value={data.password}
           />
         </div>
-        {/* <div className="mb-3 form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
-          <label className="form-check-label" for="exampleCheck1">
-            Check me out
+        <div className="mb-3">
+          <label htmlFor="roll" className="form-label">
+            Roll
           </label>
-        </div> */}
+          <select
+            className="form-select form-select-sm"
+            aria-label=".form-select-sm example"
+            id="roll"
+            name="roll"
+            value={data.roll}
+            onChange={handler}
+          >
+            <option value="0">Choose</option>
+            <option value="1">Create User</option>
+            <option value="2">Update User</option>
+          </select>
+        </div>
         <button type="submit" className="btn btn-primary">
           Register
         </button>

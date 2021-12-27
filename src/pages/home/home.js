@@ -1,10 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./home.css";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { VerifyTid } from "../../redux/action";
 
 //navigation bar
-const Nav = ({ LOGIN }) => {
+export const Nav = ({ LOGIN }) => {
   const user = LOGIN.username;
   return (
     <React.Fragment>
@@ -27,7 +29,14 @@ const Nav = ({ LOGIN }) => {
               </Link>
             </React.Fragment>
           ) : (
-            <a href="/" className="link">
+            <a
+              href="/"
+              className="link"
+              onClick={() => {
+                sessionStorage.setItem("userid", "");
+                sessionStorage.setItem("tid", "");
+              }}
+            >
               Logout
             </a>
           )}
@@ -39,17 +48,69 @@ const Nav = ({ LOGIN }) => {
 
 //content body
 const Body = ({ LOGIN }) => {
-  const user = LOGIN.username;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { TID } = useSelector((state) => state.data);
+  const [id, setid] = React.useState("");
+  const user = LOGIN.roll;
+
+  React.useEffect(() => {
+    if (TID === "verified" && user === "2") {
+      sessionStorage.setItem("tid", id);
+      navigate("/information");
+    }
+    if (TID === "verified" && user === "3") {
+      sessionStorage.setItem("tid", id);
+      navigate("/tracker");
+    }
+  }, [TID, navigate, id, user]);
+
+  const submit = (e) => {
+    e.preventDefault();
+    if (id) {
+      dispatch(VerifyTid({ tid: id }));
+    }
+  };
   return (
     <div className="homecontainer">
       <div className="homebody">
         <span>welcome to</span>
         Block chain based solution for milk procurement and adulteration
         detection
-        {user ? (
+        {user === "1" ? (
           <Link to="/information" className="link">
-            Data collection
+            Create Data
           </Link>
+        ) : user === "2" ? (
+          <form onSubmit={submit} className="transfo">
+            <input
+              type="text"
+              className="form-control"
+              id="transaction"
+              name="Transaction Id"
+              placeholder="Transaction ID"
+              value={id}
+              onChange={(e) => {
+                setid(e.target.value);
+              }}
+            />
+            <button type="submit">Verify</button>
+          </form>
+        ) : user === "3" ? (
+          <form onSubmit={submit} className="transfo">
+            <input
+              type="text"
+              className="form-control"
+              id="transaction"
+              name="Transaction Id"
+              placeholder="Transaction ID"
+              value={id}
+              onChange={(e) => {
+                setid(e.target.value);
+              }}
+            />
+            <button type="submit">Verify</button>
+          </form>
         ) : (
           <Link to="/login" className="link">
             Login
@@ -75,7 +136,6 @@ const Home = () => {
   const { LOGIN } = useSelector((state) => state.data);
   return (
     <React.Fragment>
-      <Nav LOGIN={LOGIN} />
       <Body LOGIN={LOGIN} />
     </React.Fragment>
   );

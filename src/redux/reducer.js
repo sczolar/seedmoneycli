@@ -5,6 +5,10 @@ const initial = {
   ERROR: [false],
   LOGIN: {},
   MESSAGE: "",
+  INFO: {},
+  MILK: {},
+  TID: "",
+  ETE: [],
 };
 
 const reducer = (state = initial, action) => {
@@ -45,6 +49,38 @@ const reducer = (state = initial, action) => {
       return {
         ...state,
         LOGIN: action.payload,
+        loading: false,
+        tloading: false,
+      };
+    //transaction id verify and store
+    case types.TID:
+      return {
+        ...state,
+        TID: action.payload,
+        loading: false,
+        tloading: false,
+      };
+    //info
+    case types.INFO:
+      return {
+        ...state,
+        INFO: action.payload,
+        loading: false,
+        tloading: false,
+      };
+    //milk
+    case types.MILK:
+      return {
+        ...state,
+        MILK: action.payload,
+        loading: false,
+        tloading: false,
+      };
+      //get entire transaction details
+    case types.ETE:
+      return {
+        ...state,
+        ETE: action.payload,
         loading: false,
         tloading: false,
       };
