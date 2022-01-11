@@ -26,7 +26,7 @@ const Register = () => {
   const handler = (e) => {
     setdata({ ...data, [e.target.name]: e.target.value });
   };
-
+  // const focuse = document.getElementById('username').focus();
   const submit = (e) => {
     e.preventDefault();
     if (data.username && data.password && data.email) {
@@ -50,7 +50,7 @@ const Register = () => {
         {loading && <h1 className="logloading">loading.....</h1>}
         <div className="mb-3">
           <label htmlFor="username" className="form-label">
-            User Name
+            Society Name
           </label>
           <input
             type="text"
@@ -63,7 +63,7 @@ const Register = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
-            Email
+            Society Id
           </label>
           <input
             type="email"
@@ -77,7 +77,7 @@ const Register = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">
-            Password
+            Mobile Number
           </label>
           <input
             type="password"
@@ -89,21 +89,56 @@ const Register = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="roll" className="form-label">
-            Roll
+          <label htmlFor="exampleInputPassword1" className="form-label">
+            Email Id
           </label>
-          <select
-            className="form-select form-select-sm"
-            aria-label=".form-select-sm example"
-            id="roll"
-            name="roll"
-            value={data.roll}
+          <input
+            type="password"
+            className="form-control"
+            id="exampleInputPassword1"
+            name="password"
             onChange={handler}
-          >
-            <option value="0">Choose</option>
-            <option value="1">Create User</option>
-            <option value="2">Update User</option>
-          </select>
+            value={data.password}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleInputPassword1" className="form-label">
+           District
+          </label>
+          <input
+            type="password"
+            className="form-control"
+            id="exampleInputPassword1"
+            name="password"
+            onChange={handler}
+            value={data.password}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleInputPassword1" className="form-label">
+            Pin Code
+          </label>
+          <input
+            type="password"
+            className="form-control"
+            id="exampleInputPassword1"
+            name="password"
+            onChange={handler}
+            value={data.password}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleInputPassword1" className="form-label">
+            Zone
+          </label>
+          <input
+            type="password"
+            className="form-control"
+            id="exampleInputPassword1"
+            name="password"
+            onChange={handler}
+            value={data.password}
+          />
         </div>
         <button type="submit" className="btn btn-primary">
           Register

@@ -21,7 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/information" element={<Info />} />
-        <Route path="/milkprocess" element={<Milk />} />
+        {/* <Route path="/milkprocess" element={<Milk />} /> */}
         <Route path="/barcode" element={<QRCode />} />
         <Route path="/tracker" element={<Tracker />} />
       </Routes>

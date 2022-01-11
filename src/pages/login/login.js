@@ -42,7 +42,21 @@ const Login = () => {
       <form onSubmit={submit}>
         <div className="mb-3">
           <label htmlFor="username" className="form-label">
-            User Name
+            Society Id
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="username"
+            name="username"
+            aria-describedby="emailHelp"
+            onChange={handler}
+            value={data.username}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="username" className="form-label">
+            Mobile Number
           </label>
           <input
             type="text"
