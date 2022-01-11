@@ -1,13 +1,13 @@
 import "./information.css";
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { CreateInfo } from "../../redux/action";
-import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+// import { CreateInfo } from "../../redux/action";
+// import { useDispatch } from "react-redux";
 
 //information
 const Information = (props) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [active, setactive] = React.useState(false);
   const [data, setdata] = React.useState({
     date: "",

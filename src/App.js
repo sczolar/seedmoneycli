@@ -5,7 +5,7 @@ import Login from "./pages/login/login";
 import Register from "./pages/register/register";
 import Home from "./pages/home/home";
 import Info from "./pages/information/information";
-import Milk from "./pages/milkprocess/milk";
+// import Milk from "./pages/milkprocess/milk";
 import { useSelector } from "react-redux";
 import { Nav } from "./pages/home/home";
 import QRCode from "./pages/QRgenerater/qrgen";
