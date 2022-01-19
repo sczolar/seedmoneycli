@@ -76,19 +76,6 @@ const Information = (props) => {
                   value={data.date}
                 />
               </div>
-              {/* <div className="mb-3">
-                <label htmlFor="batch" className="form-label">
-                  Batch
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="batch"
-                  name="batch"
-                  onChange={handler}
-                  value={data.batch}
-                />
-              </div> */}
               <div class="mb-3">
                 <label for="disabledSelect" class="form-label">
                   Batch
@@ -123,6 +110,7 @@ const Information = (props) => {
           {/*farmer id*/}
           {active ? (
             <>
+            <h2 style={{ textAlign: "center" }}>Farmer Form</h2>
               <div className="mb-3">
                 <label htmlFor="farmerid" className="form-label">
                   Farmer ID

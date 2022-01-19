@@ -23,7 +23,7 @@ function App() {
         <Route path="/information" element={<Info />} />
         {/* <Route path="/milkprocess" element={<Milk />} /> */}
         <Route path="/barcode" element={<QRCode />} />
-        <Route path="/tracker" element={<Tracker />} />
+        {/* <Route path="/tracker" element={<Tracker />} /> */}
       </Routes>
     </React.Fragment>
   );

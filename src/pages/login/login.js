@@ -40,6 +40,7 @@ const Login = () => {
     <div className="login">
       {loading && <h1 className="logloading">loading.....</h1>}
       <form onSubmit={submit}>
+        <h2 style={{ textAlign: "center" }}>Login Form</h2>
         <div className="mb-3">
           <label htmlFor="username" className="form-label">
             Society Id

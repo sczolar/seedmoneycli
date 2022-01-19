@@ -48,6 +48,7 @@ const Register = () => {
     <div className="register">
       <form onSubmit={submit}>
         {loading && <h1 className="logloading">loading.....</h1>}
+        <h2 style={{ textAlign: "center" }}>Register Form</h2>
         <div className="mb-3">
           <label htmlFor="username" className="form-label">
             Society Name
