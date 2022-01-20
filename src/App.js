@@ -9,7 +9,7 @@ import Info from "./pages/information/information";
 import { useSelector } from "react-redux";
 import { Nav } from "./pages/home/home";
 import QRCode from "./pages/QRgenerater/qrgen";
-import Tracker from "./pages/tracker/tracker";
+// import Tracker from "./pages/tracker/tracker";
 
 function App() {
   const { LOGIN } = useSelector((state) => state.data);
