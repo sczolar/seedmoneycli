@@ -9,15 +9,31 @@ nav {
   width: 100%;
   z-index: 1;
 }
-nav h3 {
-  margin-left: 10px;
+nav .welcome {
+  position: absolute;
+  display: flex;
+  left: 0;
+  width: 80%;
+  flex: 1;
+}
+nav .welcome div.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--font-c);
+  font-size: 25px;
+  margin-right: 50px;
+  margin-left: 5px;
+}
+nav .welcome div h3 {
+  margin-top: 4px;
+  margin-left: 4px;
 }
 .home {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  text-transform: capitalize;
+  text-transform: capitalize; 
 }
 .home .link {
   text-decoration: none;
@@ -29,6 +45,8 @@ nav h3 {
   cursor: pointer;
   transition: 0.5s;
   font-weight: 600;
+  position: relative;
+  right: 0;
 }
 .home .link:hover {
   background-color: #6063b900;
@@ -79,13 +97,13 @@ nav h3 {
   height: 50px;
   font-size: 25px;
 }
-.transfo button{
-  border:none;
-  outline:none;
+.transfo button {
+  border: none;
+  outline: none;
   color: var(--font-c);
   background-color: var(--wel-com);
   font-size: 28px;
   padding: 4px 10px;
-  border-radius:6px;
+  border-radius: 6px;
   margin-left: 20px;
 }

@@ -63,6 +63,9 @@ const Information = (props) => {
           {/*farmer date*/}
           {!active && (
             <>
+              <h2 style={{ textAlign: "center", textTransform: "capitalize" }}>
+                choose date & session
+              </h2>
               <div className="mb-3">
                 <label htmlFor="farmerid" className="form-label">
                   Date
@@ -110,7 +113,7 @@ const Information = (props) => {
           {/*farmer id*/}
           {active ? (
             <>
-            <h2 style={{ textAlign: "center" }}>Farmer Form</h2>
+              <h2 style={{ textAlign: "center" }}>Farmer Form</h2>
               <div className="mb-3">
                 <label htmlFor="farmerid" className="form-label">
                   Farmer ID

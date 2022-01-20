@@ -1,13 +1,16 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./home.css";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { VerifyTid } from "../../redux/action";
+// import { useDispatch } from "react-redux";
+// import { VerifyTid } from "../../redux/action";
+import PersonIcon from "@mui/icons-material/Person";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 //navigation bar
 export const Nav = ({ LOGIN }) => {
-  const user = LOGIN.username;
+  const user = sessionStorage.getItem("active");
   return (
     <React.Fragment>
       <nav
@@ -17,7 +20,22 @@ export const Nav = ({ LOGIN }) => {
             : { justifyContent: "flex-end" }
         }
       >
-        {user && <h3 className="title">welcome {user}</h3>}
+        {user && (
+          <div className="welcome">
+            <div className="name">
+              <PersonIcon />
+              <h3 className="title">aavin milk's</h3>
+            </div>
+            <div className="name">
+              <LocalOfferIcon />
+              <h3 className="title">12367184</h3>
+            </div>
+            <div className="name">
+              <LocationOnIcon />
+              <h3 className="title">salem</h3>
+            </div>
+          </div>
+        )}
         <header className="home">
           {!user ? (
             <React.Fragment>
@@ -32,12 +50,8 @@ export const Nav = ({ LOGIN }) => {
             <a
               href="/"
               className="link"
-              onClick={() => {
-                sessionStorage.setItem("userid", "");
-                sessionStorage.setItem("tid", "");
-              }}
             >
-              Logout
+              
             </a>
           )}
         </header>
@@ -48,69 +62,39 @@ export const Nav = ({ LOGIN }) => {
 
 //content body
 const Body = ({ LOGIN }) => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const { TID } = useSelector((state) => state.data);
-  const [id, setid] = React.useState("");
-  const user = LOGIN.roll;
+  // const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const { TID } = useSelector((state) => state.data);
+  // const [id, setid] = React.useState("");
+  const user = sessionStorage.getItem('active');
 
-  React.useEffect(() => {
-    if (TID === "verified" && user === "2") {
-      sessionStorage.setItem("tid", id);
-      navigate("/information");
-    }
-    if (TID === "verified" && user === "3") {
-      sessionStorage.setItem("tid", id);
-      navigate("/tracker");
-    }
-  }, [TID, navigate, id, user]);
+  // React.useEffect(() => {
+  //   if (TID === "verified" && user === "2") {
+  //     sessionStorage.setItem("tid", id);
+  //     navigate("/information");
+  //   }
+  //   if (TID === "verified" && user === "3") {
+  //     sessionStorage.setItem("tid", id);
+  //     navigate("/tracker");
+  //   }
+  // }, [TID, navigate, id, user]);
 
-  const submit = (e) => {
-    e.preventDefault();
-    if (id) {
-      dispatch(VerifyTid({ tid: id }));
-    }
-  };
+  // const submit = (e) => {
+  //   e.preventDefault();
+  //   if (id) {
+  //     dispatch(VerifyTid({ tid: id }));
+  //   }
+  // };
   return (
     <div className="homecontainer">
       <div className="homebody">
         <span>welcome to</span>
         Block chain based solution for milk procurement and adulteration
         detection
-        {user === "1" ? (
+        {user ? (
           <Link to="/information" className="link">
-            Create Data
+            Enter Data
           </Link>
-        ) : user === "2" ? (
-          <form onSubmit={submit} className="transfo">
-            <input
-              type="text"
-              className="form-control"
-              id="transaction"
-              name="Transaction Id"
-              placeholder="Transaction ID"
-              value={id}
-              onChange={(e) => {
-                setid(e.target.value);
-              }}
-            />
-            <button type="submit">Verify</button>
-          </form>
-        ) : user === "3" ? (
-          <form onSubmit={submit} className="transfo">
-            <input
-              type="text"
-              className="form-control"
-              id="transaction"
-              name="Transaction Id"
-              placeholder="Transaction ID"
-              value={id}
-              onChange={(e) => {
-                setid(e.target.value);
-              }}
-            />
-            <button type="submit">Verify</button>
-          </form>
         ) : (
           <Link to="/login" className="link">
             Login

@@ -1,13 +1,13 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
-import { useDispatch, useSelector } from "react-redux";
-import { LoginUser } from "../../redux/action";
+import { useSelector } from "react-redux";
+// import { LoginUser } from "../../redux/action";
 
 const Login = () => {
   document.title = "seedmoney-login";
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const { loading, LOGIN } = useSelector((state) => state.data);
   const [data, setdata] = React.useState({
     username: "",
@@ -29,8 +29,10 @@ const Login = () => {
   const submit = (e) => {
     e.preventDefault();
     if (data.username && data.password) {
-      dispatch(LoginUser({ username: data.username, password: data.password }));
-      setdata({ username: "", password: "" });
+      // dispatch(LoginUser({ username: data.username, password: data.password }));
+      // setdata({ username: "", password: "" });
+      sessionStorage.setItem("active", 1);
+      navigate("/");
     } else {
       console.log("plese enter the value");
     }
