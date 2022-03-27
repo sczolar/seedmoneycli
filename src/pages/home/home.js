@@ -97,7 +97,7 @@ const Body = ({ LOGIN }) => {
           </Link>
         ) : (
           <Link to="/login" className="link">
-            Login
+            Get Started
           </Link>
         )}
       </div>

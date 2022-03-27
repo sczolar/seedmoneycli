@@ -1,4 +1,5 @@
 import React from "react";
+import Success from "./pages/success/success";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Login from "./pages/login/login";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/information" element={<Info />} />
         {/* <Route path="/milkprocess" element={<Milk />} /> */}
         <Route path="/barcode" element={<QRCode />} />
+        <Route path="/success" element={<Success />} />
         {/* <Route path="/tracker" element={<Tracker />} /> */}
       </Routes>
     </React.Fragment>
